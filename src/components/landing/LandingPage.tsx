@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import Section from './Section'
+import DevicesSection from './DevicesSection'
 import Layout from './Layout'
 import { sections } from './sections'
 
@@ -78,13 +79,17 @@ export default function LandingPage() {
         ref={containerRef}
         className="h-full overflow-y-auto snap-y snap-mandatory"
       >
-        {sections.map((section, index) => (
-          <Section
-            key={section.id}
-            {...section}
-            isActive={index === activeSection}
-          />
-        ))}
+        {sections.map((section, index) =>
+          section.showDevices ? (
+            <DevicesSection key={section.id} isActive={index === activeSection} />
+          ) : (
+            <Section
+              key={section.id}
+              {...section}
+              isActive={index === activeSection}
+            />
+          )
+        )}
       </div>
     </Layout>
   )

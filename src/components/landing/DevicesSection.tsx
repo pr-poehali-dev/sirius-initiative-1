@@ -1,6 +1,8 @@
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import type { Device } from "@/types"
+
+const CDN = "https://cdn.poehali.dev/projects/b0e26210-74e7-4b13-b0c0-04a6d5f46e7c/files"
 
 const devices: Device[] = [
   {
@@ -9,6 +11,7 @@ const devices: Device[] = [
     year: '2026',
     brand: 'nothing',
     tagline: 'Металл. 140x зум. Glyph Display.',
+    image: `${CDN}/688e762c-4ae0-404e-ac76-be8be20dbf91.jpg`,
     specs: {
       display: '6.83" AMOLED, 1–144Hz, 5000 nits, Gorilla Glass 7i',
       processor: 'Snapdragon 7 Gen 4',
@@ -24,6 +27,7 @@ const devices: Device[] = [
     year: '2026',
     brand: 'nothing',
     tagline: 'Glyph Bar. Тройная камера. Nothing OS 4.1.',
+    image: `${CDN}/0a480263-6518-411e-9cea-0af984b6f47d.jpg`,
     specs: {
       display: '6.78" AMOLED, 120Hz, 1224×2720, Gorilla Glass 7i',
       processor: 'Snapdragon 7s Gen 4',
@@ -39,6 +43,7 @@ const devices: Device[] = [
     year: '2025',
     brand: 'nothing',
     tagline: 'Первый настоящий флагман. Glyph Matrix.',
+    image: `${CDN}/c8d77e63-d2c5-42b2-9a37-fc238ace4cb2.jpg`,
     specs: {
       display: '6.67" AMOLED, 120Hz, 1.5K (2800×1260), 4500 nits',
       processor: 'Snapdragon 8s Gen 4',
@@ -54,6 +59,7 @@ const devices: Device[] = [
     year: '2025',
     brand: 'nothing',
     tagline: 'Перископ в среднем классе. Мощная камера.',
+    image: `${CDN}/30f7dc75-6058-4b0f-a8f0-4d48d1a508c9.jpg`,
     specs: {
       display: '6.77" AMOLED, 120Hz, 1080×2392, 3000 nits',
       processor: 'Snapdragon 7s Gen 3',
@@ -69,6 +75,7 @@ const devices: Device[] = [
     year: '2025',
     brand: 'nothing',
     tagline: 'Доступность. Три камеры. Nothing OS 3.',
+    image: `${CDN}/c616ebbb-b80a-4f69-877b-f28bcda1d522.jpg`,
     specs: {
       display: '6.77" AMOLED, 120Hz, 1080×2392, 3000 nits',
       processor: 'Snapdragon 7s Gen 3',
@@ -84,6 +91,7 @@ const devices: Device[] = [
     year: '2023',
     brand: 'nothing',
     tagline: 'Флагман. Мощь. Glyph Interface 2.0.',
+    image: `${CDN}/647c98fe-ac4c-4d19-a7df-8ed1bc4489de.jpg`,
     specs: {
       display: '6.7" LTPO OLED, 1–120Hz, 1080×2412',
       processor: 'Snapdragon 8+ Gen 1',
@@ -99,6 +107,7 @@ const devices: Device[] = [
     year: '2024',
     brand: 'nothing',
     tagline: 'Больше мощи. Тот же дизайн.',
+    image: `${CDN}/9213c719-0512-4f8a-b5e9-0d3d36840e2b.jpg`,
     specs: {
       display: '6.7" AMOLED, 120Hz, 1080×2412',
       processor: 'Dimensity 7350 Pro',
@@ -114,6 +123,7 @@ const devices: Device[] = [
     year: '2024',
     brand: 'nothing',
     tagline: 'Доступность без компромиссов.',
+    image: `${CDN}/89ff41d5-4d66-4c00-b50c-2114e6230da8.jpg`,
     specs: {
       display: '6.7" AMOLED, 120Hz, 1080×2412',
       processor: 'Dimensity 7200 Pro',
@@ -129,6 +139,7 @@ const devices: Device[] = [
     year: '2022',
     brand: 'nothing',
     tagline: 'Первый. Прозрачный. Культовый.',
+    image: `${CDN}/b2e1c607-226c-416c-94c0-befbbea3ca70.jpg`,
     specs: {
       display: '6.55" OLED, 120Hz, 1080×2400',
       processor: 'Snapdragon 778G+',
@@ -144,6 +155,7 @@ const devices: Device[] = [
     year: '2025',
     brand: 'cmf',
     tagline: 'Металл. Glyph Strip. Ещё доступнее.',
+    image: `${CDN}/87857c35-76f6-4630-9466-baab1c01f881.jpg`,
     specs: {
       display: '6.67" AMOLED, 120Hz, 1080×2400, 2000 nits',
       processor: 'Dimensity 7300 Pro',
@@ -159,6 +171,7 @@ const devices: Device[] = [
     year: '2024',
     brand: 'cmf',
     tagline: 'CMF by Nothing. Первый. Стиль по цене.',
+    image: `${CDN}/0ad4750e-3c92-454e-aa7a-cdaeb652c458.jpg`,
     specs: {
       display: '6.67" AMOLED, 120Hz, 1080×2400',
       processor: 'Dimensity 7300',
@@ -180,13 +193,13 @@ const specLabels: Record<keyof Device['specs'], string> = {
 }
 
 export default function DevicesSection({ isActive }: { isActive: boolean }) {
-  const [selected, setSelected] = useState<string>('phone1')
+  const [selected, setSelected] = useState<string>('phone4apro')
   const active = devices.find(d => d.id === selected) ?? devices[0]
 
   return (
-    <section className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24 scanlines overflow-hidden">
+    <section className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-12 lg:p-20 scanlines overflow-hidden">
       <motion.span
-        className="absolute top-8 left-8 md:left-16 lg:left-24 text-xs font-mono text-[#FF4D00] tracking-[0.3em] uppercase opacity-60"
+        className="absolute top-8 left-8 md:left-12 lg:left-20 text-xs font-mono text-[#FF4D00] tracking-[0.3em] uppercase opacity-60"
         initial={{ opacity: 0 }}
         animate={isActive ? { opacity: 0.6 } : {}}
         transition={{ duration: 0.8 }}
@@ -195,7 +208,7 @@ export default function DevicesSection({ isActive }: { isActive: boolean }) {
       </motion.span>
 
       <motion.h2
-        className="glyph-line pl-6 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8"
+        className="glyph-line pl-6 text-2xl md:text-4xl font-bold tracking-tight text-white mb-4"
         style={{ fontFamily: "'Space Mono', monospace" }}
         initial={{ opacity: 0, y: 40 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
@@ -206,7 +219,7 @@ export default function DevicesSection({ isActive }: { isActive: boolean }) {
 
       {/* Device tabs */}
       <motion.div
-        className="flex flex-wrap gap-2 pl-6 mb-8"
+        className="flex flex-wrap gap-1.5 pl-6 mb-5"
         initial={{ opacity: 0, y: 20 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.15 }}
@@ -215,10 +228,10 @@ export default function DevicesSection({ isActive }: { isActive: boolean }) {
           <button
             key={d.id}
             onClick={() => setSelected(d.id)}
-            className={`px-4 py-1.5 text-xs font-mono tracking-widest uppercase border transition-all duration-200 rounded-none ${
+            className={`px-3 py-1 text-[10px] font-mono tracking-widest uppercase border transition-all duration-200 rounded-none ${
               selected === d.id
                 ? 'border-[#FF4D00] text-[#FF4D00] bg-[#FF4D00]/10 shadow-[0_0_10px_#FF4D0033]'
-                : 'border-neutral-700 text-neutral-500 hover:border-neutral-500 hover:text-neutral-300'
+                : 'border-neutral-800 text-neutral-600 hover:border-neutral-500 hover:text-neutral-300'
             }`}
           >
             {d.name}
@@ -226,45 +239,69 @@ export default function DevicesSection({ isActive }: { isActive: boolean }) {
         ))}
       </motion.div>
 
-      {/* Specs card */}
-      <motion.div
-        key={active.id}
-        className="pl-6 max-w-2xl"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="flex items-baseline gap-4 mb-1">
-          <span className="text-2xl md:text-3xl font-bold text-white font-mono">
-            {active.brand === 'cmf' ? 'CMF ' : 'Nothing '}{active.name}
-          </span>
-          <span className="text-xs font-mono text-neutral-600 tracking-widest">{active.year}</span>
-        </div>
-        <p className="text-sm text-[#FF4D00] font-mono tracking-wide mb-6">{active.tagline}</p>
+      {/* Main content: specs + photo */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={active.id}
+          className="pl-6 flex gap-8 items-start"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25 }}
+        >
+          {/* Specs */}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-baseline gap-3 mb-1">
+              <span className="text-xl md:text-2xl font-bold text-white font-mono">
+                {active.name}
+              </span>
+              <span className="text-xs font-mono text-neutral-600 tracking-widest">{active.year}</span>
+            </div>
+            <p className="text-xs text-[#FF4D00] font-mono tracking-wide mb-4">{active.tagline}</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {(Object.keys(specLabels) as (keyof Device['specs'])[]).map((key, i) => (
-            <motion.div
-              key={key}
-              className="border border-[#1C1C1C] bg-white/[0.02] px-4 py-3"
-              initial={{ opacity: 0, x: -8 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.25, delay: i * 0.05 }}
-            >
-              <div className="text-[10px] font-mono text-neutral-600 tracking-widest uppercase mb-1">
-                {specLabels[key]}
-              </div>
-              <div className={`text-sm font-mono ${key === 'price' ? 'text-[#FF4D00]' : 'text-white'}`}>
-                {active.specs[key]}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {(Object.keys(specLabels) as (keyof Device['specs'])[]).map((key, i) => (
+                <motion.div
+                  key={key}
+                  className="border border-[#1C1C1C] bg-white/[0.02] px-3 py-2"
+                  initial={{ opacity: 0, x: -8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2, delay: i * 0.04 }}
+                >
+                  <div className="text-[9px] font-mono text-neutral-600 tracking-widest uppercase mb-0.5">
+                    {specLabels[key]}
+                  </div>
+                  <div className={`text-xs font-mono leading-snug ${key === 'price' ? 'text-[#FF4D00]' : 'text-white'}`}>
+                    {active.specs[key]}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Phone image */}
+          <motion.div
+            className="hidden md:flex flex-shrink-0 w-36 lg:w-48 items-center justify-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.35 }}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-[#FF4D00]/5 blur-2xl rounded-full scale-75" />
+              <img
+                src={active.image}
+                alt={active.name}
+                className="relative w-full h-auto object-contain drop-shadow-2xl"
+                style={{ maxHeight: '280px', filter: 'drop-shadow(0 0 20px rgba(255,77,0,0.15))' }}
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
 
       {/* Bottom decorative line */}
       <motion.div
-        className="absolute bottom-8 left-8 md:left-16 lg:left-24 flex items-center gap-3"
+        className="absolute bottom-8 left-8 md:left-12 lg:left-20 flex items-center gap-3"
         initial={{ opacity: 0 }}
         animate={isActive ? { opacity: 1 } : {}}
         transition={{ duration: 1, delay: 0.6 }}

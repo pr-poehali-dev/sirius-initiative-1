@@ -4,6 +4,36 @@ import type { Device } from "@/types"
 
 const devices: Device[] = [
   {
+    id: 'phone4apro',
+    name: 'Phone (4a) Pro',
+    year: '2026',
+    brand: 'nothing',
+    tagline: 'Металл. 140x зум. Glyph Display.',
+    specs: {
+      display: '6.83" AMOLED, 1–144Hz, 5000 nits, Gorilla Glass 7i',
+      processor: 'Snapdragon 7 Gen 4',
+      camera: '50MP Sony LYT700c (OIS) + 50MP перископ 3.5x + 8MP UW / 32MP фронт',
+      battery: '5080 mAh, 50W · IP68 · алюминиевый корпус',
+      ram: '8 / 12 GB RAM · 128 / 256 GB',
+      price: 'от £449 / ~42 000 ₽',
+    }
+  },
+  {
+    id: 'phone4a',
+    name: 'Phone (4a)',
+    year: '2026',
+    brand: 'nothing',
+    tagline: 'Glyph Bar. Тройная камера. Nothing OS 4.1.',
+    specs: {
+      display: '6.78" AMOLED, 120Hz, 1224×2720, Gorilla Glass 7i',
+      processor: 'Snapdragon 7s Gen 4',
+      camera: '50MP (OIS) + 50MP перископ 3.5x + 8MP UW / 32MP фронт',
+      battery: '5080 mAh, 50W · IP65',
+      ram: '8 / 12 GB RAM · 128 / 256 GB',
+      price: 'от £349 / ~32 000 ₽',
+    }
+  },
+  {
     id: 'phone3',
     name: 'Phone (3)',
     year: '2025',

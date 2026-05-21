@@ -139,11 +139,26 @@ const devices: Device[] = [
     }
   },
   {
+    id: 'cmfphone2',
+    name: 'CMF Phone 2',
+    year: '2025',
+    brand: 'cmf',
+    tagline: 'Металл. Glyph Strip. Ещё доступнее.',
+    specs: {
+      display: '6.67" AMOLED, 120Hz, 1080×2400, 2000 nits',
+      processor: 'Dimensity 7300 Pro',
+      camera: '50MP (OIS) + 2MP / 16MP фронт',
+      battery: '5000 mAh, 33W · алюминиевый корпус',
+      ram: '6 / 8 GB RAM · 128 / 256 GB',
+      price: 'от £199 / ~18 000 ₽',
+    }
+  },
+  {
     id: 'cmfphone1',
     name: 'CMF Phone 1',
     year: '2024',
     brand: 'cmf',
-    tagline: 'CMF by Nothing. Стиль по цене.',
+    tagline: 'CMF by Nothing. Первый. Стиль по цене.',
     specs: {
       display: '6.67" AMOLED, 120Hz, 1080×2400',
       processor: 'Dimensity 7300',
@@ -206,7 +221,7 @@ export default function DevicesSection({ isActive }: { isActive: boolean }) {
                 : 'border-neutral-700 text-neutral-500 hover:border-neutral-500 hover:text-neutral-300'
             }`}
           >
-            {d.brand === 'cmf' ? 'CMF ' : ''}{d.name}
+            {d.name}
           </button>
         ))}
       </motion.div>

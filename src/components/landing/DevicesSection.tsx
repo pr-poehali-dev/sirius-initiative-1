@@ -25,7 +25,7 @@ const devices: Device[] = [
     year: '2026',
     brand: 'nothing',
     tagline: 'Glyph Bar. Тройная камера. Nothing OS 4.1.',
-    image: `${CDN}/0a480263-6518-411e-9cea-0af984b6f47d.jpg`,
+    image: '',
     specs: {
       display: '6.78" AMOLED, 120Hz, 1224×2720, Gorilla Glass 7i',
       processor: 'Snapdragon 7s Gen 4',
@@ -41,7 +41,7 @@ const devices: Device[] = [
     year: '2025',
     brand: 'nothing',
     tagline: 'Первый настоящий флагман. Glyph Matrix.',
-    image: `${CDN}/c8d77e63-d2c5-42b2-9a37-fc238ace4cb2.jpg`,
+    image: '',
     specs: {
       display: '6.67" AMOLED, 120Hz, 1.5K (2800×1260), 4500 nits',
       processor: 'Snapdragon 8s Gen 4',
@@ -57,7 +57,7 @@ const devices: Device[] = [
     year: '2025',
     brand: 'nothing',
     tagline: 'Перископ в среднем классе. Мощная камера.',
-    image: `${CDN}/30f7dc75-6058-4b0f-a8f0-4d48d1a508c9.jpg`,
+    image: '',
     specs: {
       display: '6.77" AMOLED, 120Hz, 1080×2392, 3000 nits',
       processor: 'Snapdragon 7s Gen 3',
@@ -73,7 +73,7 @@ const devices: Device[] = [
     year: '2025',
     brand: 'nothing',
     tagline: 'Доступность. Три камеры. Nothing OS 3.',
-    image: `${CDN}/c616ebbb-b80a-4f69-877b-f28bcda1d522.jpg`,
+    image: '',
     specs: {
       display: '6.77" AMOLED, 120Hz, 1080×2392, 3000 nits',
       processor: 'Snapdragon 7s Gen 3',
@@ -89,7 +89,7 @@ const devices: Device[] = [
     year: '2023',
     brand: 'nothing',
     tagline: 'Флагман. Мощь. Glyph Interface 2.0.',
-    image: `${CDN}/647c98fe-ac4c-4d19-a7df-8ed1bc4489de.jpg`,
+    image: '',
     specs: {
       display: '6.7" LTPO OLED, 1–120Hz, 1080×2412',
       processor: 'Snapdragon 8+ Gen 1',
@@ -105,7 +105,7 @@ const devices: Device[] = [
     year: '2024',
     brand: 'nothing',
     tagline: 'Больше мощи. Тот же дизайн.',
-    image: `${CDN}/9213c719-0512-4f8a-b5e9-0d3d36840e2b.jpg`,
+    image: '',
     specs: {
       display: '6.7" AMOLED, 120Hz, 1080×2412',
       processor: 'Dimensity 7350 Pro',
@@ -121,7 +121,7 @@ const devices: Device[] = [
     year: '2024',
     brand: 'nothing',
     tagline: 'Доступность без компромиссов.',
-    image: `${CDN}/89ff41d5-4d66-4c00-b50c-2114e6230da8.jpg`,
+    image: '',
     specs: {
       display: '6.7" AMOLED, 120Hz, 1080×2412',
       processor: 'Dimensity 7200 Pro',
@@ -137,7 +137,7 @@ const devices: Device[] = [
     year: '2022',
     brand: 'nothing',
     tagline: 'Первый. Прозрачный. Культовый.',
-    image: `${CDN}/b2e1c607-226c-416c-94c0-befbbea3ca70.jpg`,
+    image: '',
     specs: {
       display: '6.55" OLED, 120Hz, 1080×2400',
       processor: 'Snapdragon 778G+',
@@ -153,7 +153,7 @@ const devices: Device[] = [
     year: '2025',
     brand: 'cmf',
     tagline: 'Металл. Glyph Strip. Ещё доступнее.',
-    image: `${CDN}/87857c35-76f6-4630-9466-baab1c01f881.jpg`,
+    image: '',
     specs: {
       display: '6.67" AMOLED, 120Hz, 1080×2400, 2000 nits',
       processor: 'Dimensity 7300 Pro',
@@ -169,7 +169,7 @@ const devices: Device[] = [
     year: '2024',
     brand: 'cmf',
     tagline: 'CMF by Nothing. Первый. Стиль по цене.',
-    image: `${CDN}/0ad4750e-3c92-454e-aa7a-cdaeb652c458.jpg`,
+    image: '',
     specs: {
       display: '6.67" AMOLED, 120Hz, 1080×2400',
       processor: 'Dimensity 7300',

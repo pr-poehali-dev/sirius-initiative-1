@@ -3,10 +3,12 @@ import { motion, useScroll, useSpring } from 'framer-motion'
 import Section from './Section'
 import DevicesSection from './DevicesSection'
 import Layout from './Layout'
+import ChatModal from './ChatModal'
 import { sections } from './sections'
 
 export default function LandingPage() {
   const [activeSection, setActiveSection] = useState(0)
+  const [chatOpen, setChatOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ container: containerRef })
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
@@ -44,7 +46,7 @@ export default function LandingPage() {
 
   return (
     <Layout>
-      {/* Progress bar — Nothing orange */}
+      {/* Progress bar */}
       <motion.div
         className="fixed top-[52px] left-0 right-0 h-[2px] bg-[#FF4D00] origin-left z-30 shadow-[0_0_8px_#FF4D00]"
         style={{ scaleX }}
@@ -75,6 +77,20 @@ export default function LandingPage() {
         ))}
       </nav>
 
+      {/* Floating chat button */}
+      <motion.button
+        onClick={() => setChatOpen(true)}
+        className="fixed bottom-6 left-6 z-40 flex items-center gap-2 px-4 py-2.5 bg-[#FF4D00] text-black font-mono text-xs tracking-widest uppercase hover:bg-[#FF4D00]/90 transition-colors shadow-[0_0_20px_#FF4D0044]"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+      >
+        <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+        Спросить ИИ
+      </motion.button>
+
       <div
         ref={containerRef}
         className="h-full overflow-y-auto snap-y snap-mandatory"
@@ -87,10 +103,13 @@ export default function LandingPage() {
               key={section.id}
               {...section}
               isActive={index === activeSection}
+              onButtonClick={() => setChatOpen(true)}
             />
           )
         )}
       </div>
+
+      <ChatModal open={chatOpen} onClose={() => setChatOpen(false)} />
     </Layout>
   )
 }

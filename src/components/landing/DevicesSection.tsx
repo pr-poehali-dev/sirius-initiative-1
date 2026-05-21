@@ -15,7 +15,7 @@ const devices: Device[] = [
       camera: '50MP Sony LYT700c (OIS) + 50MP перископ 3.5x + 8MP UW / 32MP фронт',
       battery: '5080 mAh, 50W · IP68 · алюминиевый корпус',
       ram: '8 / 12 GB RAM · 128 / 256 GB',
-      price: 'от £449 / ~42 000 ₽',
+      price: 'от $449',
     }
   },
   {
@@ -30,7 +30,7 @@ const devices: Device[] = [
       camera: '50MP (OIS) + 50MP перископ 3.5x + 8MP UW / 32MP фронт',
       battery: '5080 mAh, 50W · IP65',
       ram: '8 / 12 GB RAM · 128 / 256 GB',
-      price: 'от £349 / ~32 000 ₽',
+      price: 'от $349',
     }
   },
   {
@@ -45,7 +45,7 @@ const devices: Device[] = [
       camera: '4×50MP (OIS + перископ 3x + UW) / 50MP фронт',
       battery: '5150 mAh, 65W + 15W беспр.',
       ram: '12 / 16 GB RAM · 256 / 512 GB',
-      price: 'от $799 / ~75 000 ₽',
+      price: 'от $799',
     }
   },
   {
@@ -60,7 +60,7 @@ const devices: Device[] = [
       camera: '50MP (OIS) + 8MP UW + 50MP перископ 3x / 50MP фронт',
       battery: '5000 mAh, 50W + 7.5W обр.',
       ram: '12 GB RAM · 256 GB',
-      price: 'от $409 / ~38 000 ₽',
+      price: 'от $409',
     }
   },
   {
@@ -75,7 +75,7 @@ const devices: Device[] = [
       camera: '50MP (OIS) + 8MP UW + 50MP теле / 32MP фронт',
       battery: '5000 mAh, 45W',
       ram: '8 / 12 GB RAM · 128 / 256 GB',
-      price: 'от $379 / ~34 000 ₽',
+      price: 'от $379',
     }
   },
   {
@@ -90,7 +90,7 @@ const devices: Device[] = [
       camera: '50MP (OIS) + 50MP / 32MP фронт',
       battery: '4700 mAh, 45W + 15W беспр.',
       ram: '8 / 12 GB RAM · 128 / 256 / 512 GB',
-      price: 'от ~45 000 ₽',
+      price: 'от $599',
     }
   },
   {
@@ -105,7 +105,7 @@ const devices: Device[] = [
       camera: '50MP (OIS) + 50MP / 50MP фронт',
       battery: '5000 mAh, 50W',
       ram: '12 GB RAM · 256 GB',
-      price: 'от ~38 000 ₽',
+      price: 'от $399',
     }
   },
   {
@@ -120,7 +120,7 @@ const devices: Device[] = [
       camera: '50MP (OIS) + 50MP / 32MP фронт',
       battery: '5000 mAh, 45W',
       ram: '8 / 12 GB RAM · 128 / 256 GB',
-      price: 'от ~30 000 ₽',
+      price: 'от $299',
     }
   },
   {
@@ -135,7 +135,7 @@ const devices: Device[] = [
       camera: '50MP + 50MP / 16MP фронт',
       battery: '4500 mAh, 33W',
       ram: '8 / 12 GB RAM · 128 / 256 GB',
-      price: 'от ~25 000 ₽',
+      price: 'б/у от $150',
     }
   },
   {
@@ -150,7 +150,7 @@ const devices: Device[] = [
       camera: '50MP (OIS) + 2MP / 16MP фронт',
       battery: '5000 mAh, 33W · алюминиевый корпус',
       ram: '6 / 8 GB RAM · 128 / 256 GB',
-      price: 'от £199 / ~18 000 ₽',
+      price: 'от $199',
     }
   },
   {
@@ -165,7 +165,7 @@ const devices: Device[] = [
       camera: '50MP (OIS) + 2MP / 16MP фронт',
       battery: '5000 mAh, 33W',
       ram: '6 / 8 GB RAM · 128 / 256 GB',
-      price: 'от ~18 000 ₽',
+      price: 'от $149',
     }
   },
 ]

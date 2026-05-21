@@ -4,18 +4,48 @@ import type { Device } from "@/types"
 
 const devices: Device[] = [
   {
-    id: 'phone1',
-    name: 'Phone (1)',
-    year: '2022',
+    id: 'phone3',
+    name: 'Phone (3)',
+    year: '2025',
     brand: 'nothing',
-    tagline: 'Первый. Прозрачный. Культовый.',
+    tagline: 'Первый настоящий флагман. Glyph Matrix.',
     specs: {
-      display: '6.55" OLED, 120Hz, 1080×2400',
-      processor: 'Snapdragon 778G+',
-      camera: '50MP + 50MP / 16MP фронт',
-      battery: '4500 mAh, 33W',
+      display: '6.67" AMOLED, 120Hz, 1.5K (2800×1260), 4500 nits',
+      processor: 'Snapdragon 8s Gen 4',
+      camera: '4×50MP (OIS + перископ 3x + UW) / 50MP фронт',
+      battery: '5150 mAh, 65W + 15W беспр.',
+      ram: '12 / 16 GB RAM · 256 / 512 GB',
+      price: 'от $799 / ~75 000 ₽',
+    }
+  },
+  {
+    id: 'phone3apro',
+    name: 'Phone (3a) Pro',
+    year: '2025',
+    brand: 'nothing',
+    tagline: 'Перископ в среднем классе. Мощная камера.',
+    specs: {
+      display: '6.77" AMOLED, 120Hz, 1080×2392, 3000 nits',
+      processor: 'Snapdragon 7s Gen 3',
+      camera: '50MP (OIS) + 8MP UW + 50MP перископ 3x / 50MP фронт',
+      battery: '5000 mAh, 50W + 7.5W обр.',
+      ram: '12 GB RAM · 256 GB',
+      price: 'от $409 / ~38 000 ₽',
+    }
+  },
+  {
+    id: 'phone3a',
+    name: 'Phone (3a)',
+    year: '2025',
+    brand: 'nothing',
+    tagline: 'Доступность. Три камеры. Nothing OS 3.',
+    specs: {
+      display: '6.77" AMOLED, 120Hz, 1080×2392, 3000 nits',
+      processor: 'Snapdragon 7s Gen 3',
+      camera: '50MP (OIS) + 8MP UW + 50MP теле / 32MP фронт',
+      battery: '5000 mAh, 45W',
       ram: '8 / 12 GB RAM · 128 / 256 GB',
-      price: 'от ~25 000 ₽',
+      price: 'от $379 / ~34 000 ₽',
     }
   },
   {
@@ -23,7 +53,7 @@ const devices: Device[] = [
     name: 'Phone (2)',
     year: '2023',
     brand: 'nothing',
-    tagline: 'Флагман. Мощь. Glyph 2.0.',
+    tagline: 'Флагман. Мощь. Glyph Interface 2.0.',
     specs: {
       display: '6.7" LTPO OLED, 1–120Hz, 1080×2412',
       processor: 'Snapdragon 8+ Gen 1',
@@ -31,6 +61,21 @@ const devices: Device[] = [
       battery: '4700 mAh, 45W + 15W беспр.',
       ram: '8 / 12 GB RAM · 128 / 256 / 512 GB',
       price: 'от ~45 000 ₽',
+    }
+  },
+  {
+    id: 'phone2aplus',
+    name: 'Phone (2a) Plus',
+    year: '2024',
+    brand: 'nothing',
+    tagline: 'Больше мощи. Тот же дизайн.',
+    specs: {
+      display: '6.7" AMOLED, 120Hz, 1080×2412',
+      processor: 'Dimensity 7350 Pro',
+      camera: '50MP (OIS) + 50MP / 50MP фронт',
+      battery: '5000 mAh, 50W',
+      ram: '12 GB RAM · 256 GB',
+      price: 'от ~38 000 ₽',
     }
   },
   {
@@ -49,18 +94,18 @@ const devices: Device[] = [
     }
   },
   {
-    id: 'phone2aplus',
-    name: 'Phone (2a) Plus',
-    year: '2024',
+    id: 'phone1',
+    name: 'Phone (1)',
+    year: '2022',
     brand: 'nothing',
-    tagline: 'Больше мощи. Тот же дизайн.',
+    tagline: 'Первый. Прозрачный. Культовый.',
     specs: {
-      display: '6.7" AMOLED, 120Hz, 1080×2412',
-      processor: 'Dimensity 7350 Pro',
-      camera: '50MP (OIS) + 50MP / 50MP фронт',
-      battery: '5000 mAh, 50W',
-      ram: '12 GB RAM · 256 GB',
-      price: 'от ~38 000 ₽',
+      display: '6.55" OLED, 120Hz, 1080×2400',
+      processor: 'Snapdragon 778G+',
+      camera: '50MP + 50MP / 16MP фронт',
+      battery: '4500 mAh, 33W',
+      ram: '8 / 12 GB RAM · 128 / 256 GB',
+      price: 'от ~25 000 ₽',
     }
   },
   {

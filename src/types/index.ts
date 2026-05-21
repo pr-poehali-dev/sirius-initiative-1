@@ -15,7 +15,6 @@ export interface Device {
   year: string
   brand: 'nothing' | 'cmf'
   tagline: string
-  image: string
   specs: DeviceSpec
 }
 

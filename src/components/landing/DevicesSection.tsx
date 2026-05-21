@@ -2,8 +2,6 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import type { Device } from "@/types"
 
-const CDN = "https://cdn.poehali.dev/projects/b0e26210-74e7-4b13-b0c0-04a6d5f46e7c/files"
-
 const devices: Device[] = [
   {
     id: 'phone4apro',
@@ -11,7 +9,7 @@ const devices: Device[] = [
     year: '2026',
     brand: 'nothing',
     tagline: 'Металл. 140x зум. Glyph Display.',
-    image: `${CDN}/688e762c-4ae0-404e-ac76-be8be20dbf91.jpg`,
+    image: '',
     specs: {
       display: '6.83" AMOLED, 1–144Hz, 5000 nits, Gorilla Glass 7i',
       processor: 'Snapdragon 7 Gen 4',
@@ -279,23 +277,7 @@ export default function DevicesSection({ isActive }: { isActive: boolean }) {
             </div>
           </div>
 
-          {/* Phone image */}
-          <motion.div
-            className="hidden md:flex flex-shrink-0 w-36 lg:w-48 items-center justify-center"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.35 }}
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-[#FF4D00]/5 blur-2xl rounded-full scale-75" />
-              <img
-                src={active.image}
-                alt={active.name}
-                className="relative w-full h-auto object-contain drop-shadow-2xl"
-                style={{ maxHeight: '280px', filter: 'drop-shadow(0 0 20px rgba(255,77,0,0.15))' }}
-              />
-            </div>
-          </motion.div>
+
         </motion.div>
       </AnimatePresence>
 
